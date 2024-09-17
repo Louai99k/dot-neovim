@@ -40,7 +40,8 @@ local plugins = {
 		init = function()
 			require("plugins.configs.which-key")
 		end,
-		opt = {},
+		-- Disabled for now unless I need it again
+		enabled = false,
 	},
 	-- Auto Complete
 	{
