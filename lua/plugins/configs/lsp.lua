@@ -20,6 +20,17 @@ conform.setup({
 		javascriptreact = { "prettier" },
 		json = { "prettier" },
 		cpp = { "clang-format" },
+		php = { "php" },
+	},
+	formatters = {
+		php = {
+			command = "php-cs-fixer",
+			args = {
+				"fix",
+				"$FILENAME",
+			},
+			stdin = false,
+		},
 	},
 })
 lspconfig.lua_ls.setup({
@@ -33,6 +44,7 @@ lspconfig.lua_ls.setup({
 	capabilities = lua_capabilities,
 })
 lspconfig.clangd.setup({})
+lspconfig.intelephense.setup({})
 
 -- Key Bindings
 vim.keymap.set({ "v", "n" }, "<leader>lf", conform.format, { desc = "Format File" })
