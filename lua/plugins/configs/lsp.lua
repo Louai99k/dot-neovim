@@ -46,6 +46,12 @@ lspconfig.lua_ls.setup({
 lspconfig.clangd.setup({})
 lspconfig.intelephense.setup({})
 
+vim.filetype.add({
+	pattern = {
+		[".*%.blade%.php"] = "blade",
+	},
+})
+
 -- Key Bindings
 vim.keymap.set({ "v", "n" }, "<leader>lf", conform.format, { desc = "Format File" })
 vim.keymap.set("n", "<leader>lg", telescope_builtin.lsp_definitions, { desc = "Go To Definition" })
