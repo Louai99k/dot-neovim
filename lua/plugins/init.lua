@@ -143,6 +143,12 @@ local plugins = {
 			require("colorizer").setup()
 		end,
 	},
+	{
+		"m4xshen/autoclose.nvim",
+		init = function()
+			require("autoclose").setup()
+		end,
+	},
 }
 
 require("lazy").setup(plugins)
