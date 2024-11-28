@@ -9,6 +9,11 @@ require("nvim-tree").setup({
 		git_ignored = false,
 	},
 	renderer = { icons = { glyphs = { git = { untracked = "+" } } } },
+	actions = {
+		open_file = {
+			quit_on_open = true,
+		},
+	},
 })
 
 vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "Focus Tree View" })
