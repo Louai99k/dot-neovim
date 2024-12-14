@@ -5,12 +5,7 @@ local telescope_builtin = require("telescope.builtin")
 
 -- Set Up
 require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"lua_ls",
-		"clangd",
-	},
-})
+require("mason-lspconfig").setup({})
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
