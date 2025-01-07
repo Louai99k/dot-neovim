@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	-- Theme
 	{
 		"catppuccin/nvim",
 		priority = 1000,
@@ -21,7 +20,6 @@ local plugins = {
 			vim.cmd([[colorscheme catppuccin-mocha]])
 		end,
 	},
-	-- Mason & LSP
 	{
 		"williamboman/mason.nvim",
 		dependencies = {
@@ -33,17 +31,6 @@ local plugins = {
 			require("plugins.configs.lsp")
 		end,
 	},
-	-- Which Key
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			require("plugins.configs.which-key")
-		end,
-		-- Disabled for now unless I need it again
-		enabled = false,
-	},
-	-- Auto Complete
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -59,7 +46,6 @@ local plugins = {
 			require("plugins.configs.cmp")
 		end,
 	},
-	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -67,7 +53,6 @@ local plugins = {
 			require("plugins.configs.treesitter")
 		end,
 	},
-	-- Lua Line
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -75,21 +60,18 @@ local plugins = {
 			require("lualine").setup()
 		end,
 	},
-	-- Tree View
 	{
 		"nvim-tree/nvim-tree.lua",
 		init = function()
 			require("plugins.configs.nvim-tree")
 		end,
 	},
-	-- Buffer Line
 	{
 		"akinsho/bufferline.nvim",
 		init = function()
 			require("plugins.configs.bufferline")
 		end,
 	},
-	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -109,18 +91,10 @@ local plugins = {
 			require("plugins.configs.telescope")
 		end,
 	},
-	-- Ts Tools
 	{
 		"pmizio/typescript-tools.nvim",
 		init = function()
 			require("plugins.configs.tstools")
-		end,
-	},
-	-- Git plugins
-	{
-		"tpope/vim-fugitive",
-		config = function()
-			require("plugins.configs.git")
 		end,
 	},
 	{
@@ -136,7 +110,6 @@ local plugins = {
 		end,
 		lazy = false,
 	},
-	-- Colorizer
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
