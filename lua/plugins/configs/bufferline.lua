@@ -5,6 +5,7 @@ require("bufferline").setup({
 })
 
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "<A-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<leader>x", "<cmd>bdelete!<CR>", { desc = "Close Buffer" })
 vim.keymap.set("n", "<A-x>", "<cmd>BufferLineCloseOthers<CR>", { desc = "Close Other Buffers" })
 
