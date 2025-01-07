@@ -49,13 +49,6 @@ vim.filetype.add({
 
 -- Key Bindings
 vim.keymap.set({ "v", "n" }, "<leader>lf", conform.format, { desc = "Format File" })
-vim.keymap.set("n", "<leader>lg", telescope_builtin.lsp_definitions, { desc = "Go To Definition" })
-vim.keymap.set(
-	"n",
-	"<leader>lr",
-	telescope_builtin.lsp_references,
-	{ desc = "Show References", silent = true, noremap = true }
-)
 
 -- Events
 vim.api.nvim_create_autocmd("BufWritePre", {
