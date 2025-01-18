@@ -1,7 +1,6 @@
 local conform = require("conform")
 local lspconfig = require("lspconfig")
 local lua_capabilities = require("cmp_nvim_lsp").default_capabilities()
-local telescope_builtin = require("telescope.builtin")
 
 -- Set Up
 require("mason").setup()
@@ -13,6 +12,8 @@ conform.setup({
 		typescript = { "prettier" },
 		typescriptreact = { "prettier" },
 		javascriptreact = { "prettier" },
+		html = { "prettier" },
+		css = { "prettier" },
 		json = { "prettier" },
 		cpp = { "clang-format" },
 		php = { "php" },
@@ -28,6 +29,8 @@ conform.setup({
 		},
 	},
 })
+
+-- LSP Servers Setup
 lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
@@ -38,6 +41,8 @@ lspconfig.lua_ls.setup({
 	},
 	capabilities = lua_capabilities,
 })
+lspconfig.html.setup({})
+lspconfig.cssls.setup({})
 lspconfig.clangd.setup({})
 lspconfig.intelephense.setup({})
 
