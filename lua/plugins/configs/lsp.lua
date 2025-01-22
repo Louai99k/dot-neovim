@@ -14,6 +14,7 @@ conform.setup({
 		javascriptreact = { "prettier" },
 		html = { "prettier" },
 		css = { "prettier" },
+		scss = { "prettier" },
 		json = { "prettier" },
 		cpp = { "clang-format" },
 		php = { "php" },
@@ -41,8 +42,21 @@ lspconfig.lua_ls.setup({
 	},
 	capabilities = lua_capabilities,
 })
-lspconfig.html.setup({})
-lspconfig.cssls.setup({})
+
+--Enable (broadcasting) snippet capability for completion
+local html_capabilities = vim.lsp.protocol.make_client_capabilities()
+html_capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.html.setup({
+	capabilities = html_capabilities,
+})
+
+--Enable (broadcasting) snippet capability for completion
+local css_capabilities = vim.lsp.protocol.make_client_capabilities()
+css_capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.cssls.setup({
+	capabilities = css_capabilities,
+})
+
 lspconfig.clangd.setup({})
 lspconfig.intelephense.setup({})
 
