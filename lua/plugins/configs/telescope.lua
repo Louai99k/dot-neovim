@@ -1,6 +1,6 @@
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
-local nvim_tree_lib = require("nvim-tree.lib")
+local nvim_tree_api = require("nvim-tree.api")
 
 telescope.load_extension("live_grep_args")
 
@@ -10,7 +10,7 @@ local find_files = function()
 end
 
 local grep_at_current_tree_node = function()
-	local node = nvim_tree_lib.get_node_at_cursor()
+	local node = nvim_tree_api.tree.get_node_under_cursor()
 	if not node then
 		return
 	end
