@@ -18,6 +18,7 @@ conform.setup({
 		json = { "prettier" },
 		cpp = { "clang-format" },
 		php = { "php" },
+		blade = { "blade-formatter" },
 	},
 	formatters = {
 		php = {
@@ -30,6 +31,8 @@ conform.setup({
 		},
 	},
 })
+
+vim.env.PHP_CS_FIXER_IGNORE_ENV = "true"
 
 -- LSP Servers Setup
 lspconfig.lua_ls.setup({
@@ -48,6 +51,7 @@ local html_capabilities = vim.lsp.protocol.make_client_capabilities()
 html_capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.html.setup({
 	capabilities = html_capabilities,
+	filetypes = { "blade", "html" },
 })
 
 --Enable (broadcasting) snippet capability for completion
