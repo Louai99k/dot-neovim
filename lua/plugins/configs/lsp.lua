@@ -63,6 +63,7 @@ lspconfig.cssls.setup({
 
 lspconfig.clangd.setup({})
 lspconfig.intelephense.setup({})
+lspconfig.tailwindcss.setup({})
 
 vim.filetype.add({
 	pattern = {
