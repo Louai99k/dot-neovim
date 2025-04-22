@@ -13,11 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	{
-		"catppuccin/nvim",
-		priority = 1000,
+		"rose-pine/neovim",
+		name = "rose-pine",
 		config = function()
-			vim.o.background = "dark"
-			vim.cmd([[colorscheme catppuccin-mocha]])
+			vim.cmd("colorscheme rose-pine")
 		end,
 	},
 	{
