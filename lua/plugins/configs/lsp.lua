@@ -1,6 +1,4 @@
 local conform = require("conform")
-local lspconfig = require("lspconfig")
-local lua_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Set Up
 require("mason").setup()
@@ -19,6 +17,7 @@ conform.setup({
 		cpp = { "clang-format" },
 		php = { "php" },
 		blade = { "blade-formatter" },
+		python = { "black" },
 	},
 	formatters = {
 		php = {
@@ -35,7 +34,10 @@ conform.setup({
 vim.env.PHP_CS_FIXER_IGNORE_ENV = "true"
 
 -- LSP Servers Setup
-lspconfig.lua_ls.setup({
+
+-- Lua
+local lua_capabilities = require("cmp_nvim_lsp").default_capabilities()
+vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -46,24 +48,40 @@ lspconfig.lua_ls.setup({
 	capabilities = lua_capabilities,
 })
 
+-- Python
+vim.lsp.config("pylsp", {})
+
+-- HTML
 --Enable (broadcasting) snippet capability for completion
 local html_capabilities = vim.lsp.protocol.make_client_capabilities()
 html_capabilities.textDocument.completion.completionItem.snippetSupport = true
-lspconfig.html.setup({
+vim.lsp.config("html", {
 	capabilities = html_capabilities,
 	filetypes = { "blade", "html" },
 })
 
+-- CSS
 --Enable (broadcasting) snippet capability for completion
 local css_capabilities = vim.lsp.protocol.make_client_capabilities()
 css_capabilities.textDocument.completion.completionItem.snippetSupport = true
-lspconfig.cssls.setup({
+vim.lsp.config("cssls", {
 	capabilities = css_capabilities,
 })
 
-lspconfig.clangd.setup({})
-lspconfig.intelephense.setup({})
-lspconfig.tailwindcss.setup({})
+-- Cpp
+vim.lsp.config("clangd", {})
+
+-- Tailwindcss
+vim.lsp.config("tailwindcss", {})
+
+-- PHP
+vim.lsp.config("intelephense", {})
+
+-- #################### Enable LSP ####################
+vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense" })
+-- #################### Enable LSP ####################
+
+-- New File Types
 
 vim.filetype.add({
 	pattern = {
