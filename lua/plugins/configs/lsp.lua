@@ -2,7 +2,21 @@ local conform = require("conform")
 
 -- Set Up
 require("mason").setup()
-require("mason-lspconfig").setup({})
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"clangd",
+		"cssls",
+		"html",
+		"intelephense",
+		"lua_ls",
+		"phpactor",
+		"pylsp",
+		"stylua",
+		"vtsls",
+		"tailwindcss",
+	},
+	automatic_enable = false,
+})
 conform.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -77,8 +91,11 @@ vim.lsp.config("tailwindcss", {})
 -- PHP
 vim.lsp.config("intelephense", {})
 
+-- Visual Studio TS Language Server
+vim.lsp.config("vtsls", {})
+
 -- #################### Enable LSP ####################
-vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense" })
+vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense", "vtsls" })
 -- #################### Enable LSP ####################
 
 -- New File Types
@@ -99,7 +116,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		local filename = vim.fn.expand("%:p")
 
 		if not filename:match("node_modules") then
-			require("conform").format({ bufnr = args.buf })
+			conform.format({ bufnr = args.buf })
 		end
 	end,
 })

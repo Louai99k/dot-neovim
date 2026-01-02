@@ -91,12 +91,6 @@ local plugins = {
 		end,
 	},
 	{
-		"pmizio/typescript-tools.nvim",
-		init = function()
-			require("plugins.configs.tstools")
-		end,
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 		init = function()
 			require("gitsigns").setup()
