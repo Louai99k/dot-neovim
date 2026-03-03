@@ -8,3 +8,9 @@ vim.keymap.set("v", "p", "P", { desc = "Make default pasting without yanking" })
 vim.keymap.set("v", "P", "p", { desc = "Make capital P pasting with yanking" })
 vim.keymap.set("n", "<leader>s", ":nohlsearch<CR>", { desc = "No highlighting for search", noremap = true })
 vim.keymap.set("n", "<A-w>", ":set wrap!<CR>", { desc = "Toggle line wrap", noremap = true })
+vim.keymap.set(
+	"n",
+	"<leader>qf",
+	require("utils.quickfix").save_and_clear_qf,
+	{ desc = "Save quick fix buffer to specific file and clear quickfix buffer", noremap = true }
+)
