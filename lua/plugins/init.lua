@@ -104,12 +104,6 @@ local plugins = {
 		lazy = false,
 	},
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-	{
 		"m4xshen/autoclose.nvim",
 		init = function()
 			require("autoclose").setup()
