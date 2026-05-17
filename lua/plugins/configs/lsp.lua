@@ -3,18 +3,7 @@ local conform = require("conform")
 -- Set Up
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {
-		"clangd",
-		"cssls",
-		"html",
-		"intelephense",
-		"lua_ls",
-		"phpactor",
-		"pylsp",
-		"stylua",
-		"vtsls",
-		"tailwindcss",
-	},
+	ensure_installed = {},
 	automatic_enable = false,
 })
 conform.setup({
@@ -50,7 +39,6 @@ vim.env.PHP_CS_FIXER_IGNORE_ENV = "true"
 -- LSP Servers Setup
 
 -- Lua
-local lua_capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
@@ -59,7 +47,6 @@ vim.lsp.config("lua_ls", {
 			},
 		},
 	},
-	capabilities = lua_capabilities,
 })
 
 -- Python
@@ -94,8 +81,11 @@ vim.lsp.config("intelephense", {})
 -- Visual Studio TS Language Server
 vim.lsp.config("vtsls", {})
 
+-- Rust
+vim.lsp.config("rust_analyzer", {})
+
 -- #################### Enable LSP ####################
-vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense", "vtsls" })
+vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense", "vtsls", "rust_analyzer" })
 -- #################### Enable LSP ####################
 
 -- New File Types
