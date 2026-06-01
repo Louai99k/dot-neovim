@@ -3,18 +3,7 @@ local conform = require("conform")
 -- Set Up
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {
-		"clangd",
-		"cssls",
-		"html",
-		"intelephense",
-		"lua_ls",
-		"phpactor",
-		"pylsp",
-		"stylua",
-		"vtsls",
-		"tailwindcss",
-	},
+	ensure_installed = {},
 	automatic_enable = false,
 })
 conform.setup({
