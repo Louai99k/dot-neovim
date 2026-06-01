@@ -47,7 +47,7 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-    branch = "main",
+		branch = "main",
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.configs.treesitter")
@@ -74,7 +74,7 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-    tag = "0.2.1",
+		tag = "0.2.1",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-live-grep-args.nvim",
