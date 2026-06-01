@@ -74,7 +74,7 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.2.1",
+		tag = "v0.2.1",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-live-grep-args.nvim",

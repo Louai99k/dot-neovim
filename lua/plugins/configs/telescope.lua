@@ -2,6 +2,14 @@ local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 local nvim_tree_api = require("nvim-tree.api")
 
+telescope.setup({
+  defaults = {
+    preview = {
+      treesitter = false,
+    }
+  }
+})
+
 telescope.load_extension("live_grep_args")
 
 -- Functions
