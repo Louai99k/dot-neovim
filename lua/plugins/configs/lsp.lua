@@ -83,8 +83,11 @@ vim.lsp.config("intelephense", {})
 -- Visual Studio TS Language Server
 vim.lsp.config("vtsls", {})
 
+-- Rust Analyzer
+vim.lsp.config("rust_analyzer", {})
+
 -- #################### Enable LSP ####################
-vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense", "vtsls" })
+vim.lsp.enable({ "lua_ls", "pylsp", "html", "cssls", "clangd", "tailwindcss", "intelephense", "vtsls", "rust_analyzer" })
 -- #################### Enable LSP ####################
 
 -- New File Types
