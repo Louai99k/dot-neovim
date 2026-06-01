@@ -1,4 +1,4 @@
-local configs = require("nvim-treesitter.configs")
+local configs = require("nvim-treesitter.config")
 
 configs.setup({
 	ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "typescript", "css", "php", "html", "python" },
@@ -6,13 +6,3 @@ configs.setup({
 	highlight = { enable = true },
 	indent = { enable = true },
 })
-
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.blade = {
-	install_info = {
-		url = "https://github.com/EmranMR/tree-sitter-blade",
-		files = { "src/parser.c" },
-		branch = "main",
-	},
-	filetype = "blade",
-}
