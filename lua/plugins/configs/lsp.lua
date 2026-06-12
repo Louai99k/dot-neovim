@@ -21,6 +21,7 @@ conform.setup({
 		php = { "php" },
 		blade = { "blade-formatter" },
 		python = { "black" },
+		rust = { "rustfmt" },
 	},
 	formatters = {
 		php = {
