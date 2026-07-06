@@ -110,6 +110,13 @@ local plugins = {
 			require("autoclose").setup()
 		end,
 	},
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    config = function ()
+      require("plugins.configs.markview")
+    end
+  }
 }
 
 require("lazy").setup(plugins)
