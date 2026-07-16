@@ -97,26 +97,26 @@ local plugins = {
 			require("gitsigns").setup()
 		end,
 	},
-	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("plugins.configs.comment")
-		end,
-		lazy = false,
-	},
+	-- {
+	-- 	"numToStr/Comment.nvim",
+	-- 	config = function()
+	-- 		require("plugins.configs.comment")
+	-- 	end,
+	-- 	lazy = false,
+	-- },
 	{
 		"m4xshen/autoclose.nvim",
 		init = function()
 			require("autoclose").setup()
 		end,
 	},
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
-    config = function ()
-      require("plugins.configs.markview")
-    end
-  }
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
+		config = function()
+			require("plugins.configs.markview")
+		end,
+	},
 }
 
 require("lazy").setup(plugins)
