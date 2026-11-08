@@ -8,6 +8,7 @@ configs.setup({
 		"query",
 		"javascript",
 		"typescript",
+		"tsx",
 		"css",
 		"php",
 		"html",

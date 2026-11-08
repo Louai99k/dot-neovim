@@ -54,6 +54,13 @@ local plugins = {
 		end,
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("plugins.configs.nvim-ts-autotag")
+		end,
+	},
+	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		init = function()
